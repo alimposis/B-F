@@ -8,7 +8,7 @@ export const MainHeader =()=>{
                         <img src="./src/assets/imgs/logo.png" alt="" />
                     </a>
                     <nav className="header_menu">
-                        <a href="">Каталог</a>
+                        <a href="#caralog">Каталог</a>
                         <a href="">О НАС</a>
                         <a href="">Сотрудничество</a>
                         <a href="">Plus Size</a>

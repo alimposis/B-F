@@ -1,21 +1,21 @@
 import { MainHeader } from '../components/mainHeader'
 import { MainSwiper } from '../components/mainSwiper'
 import { MainCatalog } from '../components/mainCatalog'
-
-console.log(1)
-setTimeout(() => {
-    console.log(2)
-});
-new Promise( resolve =>{
-  resolve(console.log(3))
-})
+import { MainSliderProducts } from '../components/mainSliderProducts'
+import { useGetCategoriesProductsQuery } from '../store/api/api'
+import { store } from '../store/store'
+import { useSelector } from 'react-redux'
 
 export const App =()=>{
+  const {data} = useGetCategoriesProductsQuery(null)
   return (
     <>
       <MainHeader/>
       <MainSwiper/>
       <MainCatalog/>
+      {(data || []).map((e)=>{
+          return <MainSliderProducts key={Math.random()} props={e} />
+      })}
     </>
   )
 }
