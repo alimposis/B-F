@@ -1,4 +1,4 @@
-export interface Product {
+export interface IProduct {
     id:number
     title:string
     price:number
@@ -10,4 +10,7 @@ export interface Product {
 export type ProductRating ={
         rate:number
         count:number
+}
+export type Category ={
+    category?: string
 }

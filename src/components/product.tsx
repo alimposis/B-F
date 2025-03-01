@@ -1,4 +1,4 @@
-import { Product as intProduct } from "../models"
+import { IProduct as intProduct } from "../models"
 
 interface PopupProduct {
     product: intProduct
@@ -11,7 +11,7 @@ export const Product = ({product}:PopupProduct)=>{
                 <div className="product_wrapper-title_wrapper">
                     <h2>{product.title}</h2>
                     <h2>{product.price}</h2>
-                    <a href="">
+                    <a href={`/product/${product.id}`}>
                         <button>
                             Подробнее
                         </button>

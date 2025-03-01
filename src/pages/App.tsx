@@ -3,8 +3,7 @@ import { MainSwiper } from '../components/mainSwiper'
 import { MainCatalog } from '../components/mainCatalog'
 import { MainSliderProducts } from '../components/mainSliderProducts'
 import { useGetCategoriesProductsQuery } from '../store/api/api'
-import { store } from '../store/store'
-import { useSelector } from 'react-redux'
+import { MainFooter } from '../components/mainFooter'
 
 export const App =()=>{
   const {data} = useGetCategoriesProductsQuery(null)
@@ -16,6 +15,7 @@ export const App =()=>{
       {(data || []).map((e)=>{
           return <MainSliderProducts key={Math.random()} props={e} />
       })}
+      <MainFooter/>
     </>
   )
 }

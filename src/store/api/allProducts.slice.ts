@@ -1,19 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { Product } from "../../models";
-import { useGetAllProductsQuery } from "./api";
+import { IProduct } from "../../models";
 
-const initialState:Product[] = []
+type initState = {
+    allProducts:IProduct[]|[]
+}
+const initialState:initState = {
+    allProducts:[]
+}
 
-const {data}= useGetAllProductsQuery(null)
-
-export const allProductsSlise = createSlice({
+export const allProductsSlice = createSlice({
     name: "allProducts",
     initialState:initialState,
     reducers:{
-        addToAllProducts:(state)=>{
-            if(data) state.push(...data)    
+        addToAllProducts:(state,action)=>{
+            state.allProducts = action.payload;
+        },
+        filteredProductCategory:(state,action)=>{
+            state.allProducts = action.payload;
         }
     }
 })
 
-export const allProductsReducer = allProductsSlise.reducer
+export const { addToAllProducts,filteredProductCategory } = allProductsSlice.actions;
+export const allProductsReducer = allProductsSlice.reducer

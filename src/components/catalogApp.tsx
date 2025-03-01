@@ -1,9 +1,19 @@
+import { useDispatch } from "react-redux"
 import { useGetAllProductsQuery } from "../store/api/api"
 import { Product } from "./product"
+import { addToAllProducts } from "../store/api/allProducts.slice"
 
 
 export const CatalogApp = ()=>{
     const {data} = useGetAllProductsQuery(null)
+
+    const dispatch = useDispatch()
+
+        const handleAddProducts = () => {
+            dispatch(addToAllProducts(data))
+        };
+        handleAddProducts()
+
     return(
         <>
                 {(data || []).map((e)=>{
@@ -11,4 +21,5 @@ export const CatalogApp = ()=>{
                 })}
         </>
     )
+
 }
