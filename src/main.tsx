@@ -1,14 +1,14 @@
 import { StrictMode } from 'react'
 
 import { App } from './pages/App';
-import { Catalog } from './pages/catalog';
+import { Catalog } from './pages/Catalog';
 
 import { createRoot } from 'react-dom/client'
 import { Provider } from 'react-redux';
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { store } from './store/store';
-import "./assets/styles/main.scss"
-import { ProductList } from './pages/productList';
+import "./pages/styles/main.scss"
+import { ProductList } from './pages/ProductList';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
