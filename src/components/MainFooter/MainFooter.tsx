@@ -1,6 +1,5 @@
-import MarkSVG from '/src/assets/svg/mark.svg'
-import WatchSVG from '/src/assets/svg/watch.svg'
-import PhoneSVG from '/src/assets/svg/phone.svg'
+import { Logo_img } from '@/assets/imgs'
+import { IconMark, IconPhone, IconWatch } from '@/assets/svg'
 
 export const MainFooter = ()=>{
 
@@ -9,10 +8,10 @@ export const MainFooter = ()=>{
             <footer>
                 <div className="container">
                     <a href="/" className="logo">
-                            <img src="/src/assets/imgs/logo.png" alt="" />
+                            <img src={Logo_img} alt="" />
                     </a>
                     <div className="footer__info">
-                        <img src={MarkSVG} alt="" />
+                        <IconMark/>
                         <p>
                         Республика Беларусь,<br/> 
                         г. Брест, ул. Гродненская<br/>
@@ -20,7 +19,7 @@ export const MainFooter = ()=>{
                         </p>
                     </div>
                     <div className="footer__info">
-                        <img src={WatchSVG} alt="" />
+                        <IconWatch/>
                         <p>
                         Режим работы:<br/>
                         Ежедневно: с 9:00<br/>
@@ -28,7 +27,7 @@ export const MainFooter = ()=>{
                         </p>
                     </div>
                     <div className="footer__info">
-                        <img src={PhoneSVG} alt="" />
+                        <IconPhone/>
                         <a href="tel:+375292079615">+375 (29) 207-96-15</a>
                     </div>
                 </div>

@@ -5,6 +5,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar'
+
 import { useGetProductsCategoryQuery } from '../../store/api/api';
 
 interface PopupCategories {
@@ -21,11 +22,11 @@ export const MainSliderProducts = ({props}:PopupCategories) =>{
                     {props}
                     </h2>
                     <div className="products_slider">
-                    {(data||[]).map((e)=>{
-                            return (
-                                <Product product={e}/>
-                        )
-                        })}
+                        {(data||[]).map((e)=>{
+                                return (
+                                    <Product product={e}/>
+                            )
+                            })}
                     </div>
                 </div>
                 </div>

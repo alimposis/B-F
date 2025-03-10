@@ -1,0 +1,6 @@
+export {default as Form_img} from "./form_img.webp"
+export {default as Form_logo_img} from "./form_logo.webp"
+export {default as Logo_img} from "../imgs/logo.png"
+export {default as Main_adaptive_img} from "./main_adaptive.webp"
+export {default as Main_img} from "./main.webp"
+export {default as Menu_button_img} from "./menu_button.png"

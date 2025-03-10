@@ -50,7 +50,9 @@
         font-size: calc((24 / 360) * 100vw);
     }
 }
-
+html{
+    scrollbar-gutter: stable;
+}
 *{
     margin: 0;
     padding: 0;
@@ -72,7 +74,9 @@ body{
     padding: 0;
     margin: 0;
 }
-
+img{
+    pointer-events: none;
+}
 header{
     background-color: black;
     color: white;
@@ -419,6 +423,118 @@ button.menu__adaptive{
     border-end-end-radius: calc((20 / 360) * 100vw);
     border-top-right-radius: calc((20 / 360) * 100vw);
 }
+.product__button{
+    width: fit-content;
+    margin-top: auto;
+    margin-bottom: calc((100 / 1920) * 100vw);
+    background-color: red;
+    padding:calc((10 / 1920) * 100vw) calc((100 / 1920) * 100vw);
+    border: calc((2 / 1920) * 100vw) solid black;
+    cursor: pointer;
+    transition: 0.2s all;
+    &:hover{
+        background-color: transparent;
+    }
+}
+.bacground__form{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+}
+
+form{
+    z-index: 3;
+    width:calc((1618 / 1920) * 100vw);
+    height: calc((914 / 1920) * 100vw);
+    position: fixed;
+    position: fixed; top: 50%; left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: calc((10 / 1920) * 100vw);
+    box-sizing: border-box;
+    .container{
+        width: 100%;
+        height: 100%;
+        border: calc((3 / 1920) * 100vw) solid black;
+        padding: calc((10 / 1920) * 100vw);
+        display: flex;
+        gap: calc((50 / 1920) * 100vw);
+        position: relative;
+    }
+}
+
+.scroll__none{
+    overflow: hidden;
+}
+
+.img__form{
+    width: calc((695 / 1920) * 100vw);
+    height: calc((789 / 1920) * 100vw);
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.form__desc{
+    display: flex;
+    flex-direction: column;
+    gap: calc((36 / 1920) * 100vw);
+    input{
+        padding-bottom: calc((20 / 1920) * 100vw);
+        border-bottom:1px solid rgba(157, 157, 157, 1);
+        font-size: calc((16 / 1920) * 100vw);
+        outline: none;
+    }
+    button{
+        height: calc((60 / 1920) * 100vw);
+        background-color: red;
+        color: white;
+        cursor: pointer;
+        transition: all 0.3s;
+        &:hover{
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+    } 
+    h2{
+        font-size: calc((48 / 1920) * 100vw);
+        @media (max-width:850) {
+            font-size: calc((20 / 360) * 100vw);
+        }
+    }
+    p{
+        text-align: center;
+    }
+}
+
+.form__logo{
+    width: calc((468 / 1920) * 100vw);
+    margin-top:calc((65 / 1920) * 100vw);
+}
+
+.form__close{
+    position: absolute;
+    top: calc((37 / 1920) * 100vw);
+    right: calc((39 / 1920) * 100vw);
+    width: calc((29 / 1920) * 100vw);
+    cursor: pointer !important;
+    pointer-events: all;
+    background-color: transparent;
+}
+
+.br__adaptive{
+    display: none !important;
+}
+
+.form__p{
+    text-align: left !important;
+    br{
+        display: none;
+    }
+}
 @media (min-width:850px) {
     .adaptive{
         display: none;
@@ -428,6 +544,55 @@ button.menu__adaptive{
     }
 }
 @media (max-width:850px) {
+    form{
+        width: calc((360 / 360) * 100vw);
+        height: auto;
+        padding: calc((15 / 360) * 100vw);
+        .container{
+            padding-top: calc((56 / 360) * 100vw);
+            padding-left: calc((15 / 360) * 100vw);
+            padding-bottom: calc((31 / 360) * 100vw);
+        }
+    }
+    .form__desc{
+        gap: calc((24 / 360) * 100vw);
+        margin-left: auto;
+        margin-right: auto; 
+        input{
+            font-size: calc((14 / 360) * 100vw);
+        }
+        button{
+            height: calc((56 / 360) * 100vw);
+            font-size: calc((20 / 360) * 100vw);
+        }
+        h2{
+            text-align: center;
+        }
+    }
+    .img__form{
+        display: none;
+    }
+    .form__close{
+        width: calc((17 / 360) * 100vw);
+        height: calc((17 / 360) * 100vw);
+    }
+    .form__logo{
+        display: none;
+    }
+    .form__p{
+        font-size: calc((14 / 360) * 100vw);
+    }
+    .br__adaptive{
+        display: block !important;
+    }
+    .product__button{
+        width: 100%;
+        padding: calc((10 / 360) * 100vw) calc((20 / 360) * 100vw);
+        border: calc((2 / 360) * 100vw) solid black;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: calc((20 / 360) * 100vw);
+    }
     .SVG__menu__close{
         display: block !important;
         position: absolute;

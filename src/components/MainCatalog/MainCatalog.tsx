@@ -20,7 +20,7 @@ export const MainCatalog = ()=>{
                         <span className="menu_category_main-span" onClick={()=>setCategoryMenuState(!categoryMenuState)}>Категории</span>
                         {categoryMenuState ?
                             (data || []).map((e, index) => {
-                                                        const hrefValue = typeof e === 'boolean' ? String(e) : e;
+                            const hrefValue = typeof e === 'boolean' ? String(e) : e;
                             return <a key={index} href={`#${hrefValue}`} className="menu_category_main-a">{hrefValue}</a>;
                             })
                         :

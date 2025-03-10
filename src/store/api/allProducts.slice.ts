@@ -2,10 +2,12 @@ import { createSlice } from "@reduxjs/toolkit";
 import { IProduct } from "../../models";
 
 type initState = {
-    allProducts:IProduct[]|[]
+    allProducts:IProduct[]|[],
+    form:boolean
 }
 const initialState:initState = {
-    allProducts:[]
+    allProducts:[],
+    form:false
 }
 
 export const allProductsSlice = createSlice({
@@ -17,9 +19,12 @@ export const allProductsSlice = createSlice({
         },
         filteredProductCategory:(state,action)=>{
             state.allProducts = action.payload;
+        },
+        openCloseFormProduct:(state)=>{
+            state.form = !state.form
         }
     }
 })
 
-export const { addToAllProducts,filteredProductCategory } = allProductsSlice.actions;
+export const { addToAllProducts,filteredProductCategory,openCloseFormProduct } = allProductsSlice.actions;
 export const allProductsReducer = allProductsSlice.reducer

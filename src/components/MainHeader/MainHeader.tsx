@@ -1,3 +1,5 @@
+import { Logo_img, Menu_button_img } from "@/assets/imgs"
+import { IconMail, IconTel } from "@/assets/svg"
 
 export const MainHeader =()=>{
         return(
@@ -5,7 +7,7 @@ export const MainHeader =()=>{
             <header>
                 <main className="container">
                     <a href="/" className="logo">
-                        <img src="/src/assets/imgs/logo.png" alt="" />
+                        <img src={Logo_img} alt="" />
                     </a>
                     <nav className="header_menu">
                         <a href="/catalog">Каталог</a>
@@ -15,11 +17,11 @@ export const MainHeader =()=>{
                         <a href="">Контакты</a>
                     </nav>
                     <nav className="header_main-tel">
-                        <a href=""><img src="/src/assets/svg/mail.svg" alt="" /> <span>alimpostea@gmail.com</span></a>
-                        <a href=""><img src="/src/assets/svg/tel.svg" alt="" /><span>+375 (29) 150-28-86</span></a>
+                        <a href=""><IconMail/><span>alimpostea@gmail.com</span></a>
+                        <a href=""><IconTel/><span>+375 (29) 150-28-86</span></a>
                     </nav>
                     <button className="menu_button_button">
-                        <img src="./src/assets/imgs/menu_button.png" alt="" />
+                        <img src={Menu_button_img} alt="" />
                     </button>
                 </main>
             </header>

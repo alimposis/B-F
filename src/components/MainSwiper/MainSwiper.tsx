@@ -6,6 +6,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
+import { Main_adaptive_img, Main_img } from '@/assets/imgs';
+
 export const MainSwiper = ()=>{
     
     return(
@@ -21,15 +23,15 @@ export const MainSwiper = ()=>{
             <SwiperSlide>
                 <div className="swiper_main">
                     <span className="span_main"><h1>Открой новые грани<br className='adaptive'/> своего стиля</h1></span>
-                    <img src="./src/assets/imgs/main.webp" alt="" />
-                    <img className='adaptive' src="./src/assets/imgs/main_adaptive.webp" alt="" />
+                    <img src={Main_img} alt="" />
+                    <img className='adaptive' src={Main_adaptive_img} alt="" />
                 </div>
             </SwiperSlide>
             <SwiperSlide>
                 <div className="swiper_main">
                     <span className="span_main"><h2>Открой новые грани <br className='adaptive'/> своего стиля</h2></span>
-                    <img src="./src/assets/imgs/main.webp" alt="" />
-                    <img className='adaptive' src="./src/assets/imgs/main_adaptive.webp" alt="" />
+                    <img src={Main_img} alt="" />
+                    <img src={Main_adaptive_img} alt="" />
                 </div>
             </SwiperSlide>
         </Swiper>

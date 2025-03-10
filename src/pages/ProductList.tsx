@@ -5,14 +5,22 @@ import { useEffect, useState } from "react";
 import { IProduct } from "../models";
 import { MainFooter } from "../components/MainFooter/MainFooter";
 import { MainSliderProducts } from "../components/MainSliderProducts/MainSliderProducts";
+import { Form } from "../components/Form/Form";
+import { useDispatch } from "react-redux";
+import { openCloseFormProduct } from "../store/api/allProducts.slice";
 
 export const ProductList =()=>{
     const [product,setProduct]=useState<IProduct>()
+
     const { id } = useParams<{id:string}>();
-    const { data } = useGetProductQuery({id: id})
+    const { data } = useGetProductQuery({id:id!})
+
+    const dispatch = useDispatch()
+
     useEffect(()=>{
         setProduct(data)
     },[data])
+    
     return(
         <>
             <MainHeader/>
@@ -22,8 +30,8 @@ export const ProductList =()=>{
                     <main className="product__desc">
                         <h1>{data?.title}</h1>
                         <div className="product__desc__group">
-                            <h2>Рейтинг: </h2>
-                            <p>{data?.rating.rate}</p>
+                            <h2>Рейтинг:</h2>
+                            <p>{data?.rating?.rate}</p>
                         </div>
                         <div className="product__desc__group">
                             <h2>Категория: </h2>
@@ -39,11 +47,13 @@ export const ProductList =()=>{
                                 {data?.description}
                             </p>
                         </span>
+                        <button onClick={()=>dispatch(openCloseFormProduct())} className="product__button">Заказать</button>
                     </main>
                 </div>
             </div>
             {product?.category && <MainSliderProducts props={product?.category}/>}
             <MainFooter/>
+            <Form {...product}/>
         </>
     )
 }

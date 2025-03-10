@@ -23,7 +23,6 @@ export const CatalogProducts = ({categoriesTrue}:{categoriesTrue:string[]})=>{
                 filteredObjects = [...filteredObjects,...filterObjects(allProducts, { category: e })];
             })
             setProductCategories(filteredObjects)
-            // dispatch(addToAllProducts(productCategories))
         }
     },[categoriesTrue])
     console.log(productCategories)
